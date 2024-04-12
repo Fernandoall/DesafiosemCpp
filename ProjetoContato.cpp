@@ -71,4 +71,23 @@ void exibir_contato(Contato contato) {
     cout << "Idade: " << contato.idade() << endl;
 }
 
+int main() {
+    Contato contatos[5];
+
+    // Cadastrando 5 contatos
+    for (int i = 0; i < 5; i++) {
+    cout << "\nCadastrando novo contato:" << endl;
+    contatos[i] = cadastrar_contato();
+    }
+
+    // Exibindo os detalhes dos contatos
+    cout << "\nExibindo contatos cadastrados:" << endl;
+    for (int i = 0; i < 5; i++) {
+        exibir_contato(contatos[i]);
+        cout << "---------------------------" << endl;
+    }
+    
+    return 0;
+}
+
 
