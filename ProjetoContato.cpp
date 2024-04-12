@@ -63,5 +63,12 @@ Contato cadastrar_contato() {
     Contato novo_contato(email, nome, telefone, dtnasc);
     return novo_contato;
 }
+// Função para exibir os detalhes de um contato
+void exibir_contato(Contato contato) {
+    cout << "Nome: " << contato.nome << endl;
+    cout << "E-mail: " << contato.email << endl;
+    cout << "Telefone: " << contato.telefone << endl;
+    cout << "Idade: " << contato.idade() << endl;
+}
 
 
