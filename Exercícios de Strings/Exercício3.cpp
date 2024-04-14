@@ -37,3 +37,20 @@ int main() {
         return 1;
     }
 
+    // Abrir o arquivo de saída para escrever os nomes no formato de agenda telefônica
+    ofstream arquivoSaida("nomes_agenda.txt");
+    if (!arquivoSaida) {
+        cerr << "Erro ao abrir o arquivo de saída." << endl;
+        return 1;
+    }
+
+    // Processar cada nome no arquivo de entrada
+    string nome;
+    while (getline(arquivoEntrada, nome)) {
+        // Transformar o nome para o formato de agenda telefônica
+        string nomeFormatado = transformarNome(nome);
+
+        // Escrever o nome no arquivo de saída
+        arquivoSaida << nomeFormatado << endl;
+    }
+
