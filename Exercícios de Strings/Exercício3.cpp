@@ -8,24 +8,32 @@ using namespace std;
 
 // Função para reorganizar o nome no formato de agenda telefônica
 string transformarNome(const string& nome) {
-    // Copiar o nome para evitar alterar o original
+    // Copiando o nome para evitar alterar o original
     string nomeFormatado = nome;
 
-    // Encontrar o último espaço (separador entre o último sobrenome e o primeiro nome)
+    // Encontrando o último espaço (separador entre o último sobrenome e o primeiro nome)
     size_t posUltimoEspaco = nomeFormatado.find_last_of(" ");
     
-    // Reorganizar o nome
+    // Reorganizando nome
     if (posUltimoEspaco != string::npos) {
-        // Extrair último sobrenome
+        // Extraindo último sobrenome
         string ultimoSobrenome = nomeFormatado.substr(posUltimoEspaco + 1);
         
-        // Remover o último sobrenome do nome original
+        // Removendo o último sobrenome do nome original
         nomeFormatado.erase(posUltimoEspaco);
         
-        // Adicionar o último sobrenome seguido de uma vírgula e um espaço
+        // Adicionando o último sobrenome seguido de uma vírgula e um espaço
         nomeFormatado = ultimoSobrenome + ", " + nomeFormatado;
     }
     
     return nomeFormatado;
 }
+
+int main() {
+    // Importando o arquivo nome.txt salvo no diretório da aplicação
+    ifstream arquivoEntrada("nomes.txt");
+    if (!arquivoEntrada) {
+        cerr << "Erro ao abrir o arquivo de entrada." << endl;
+        return 1;
+    }
 
