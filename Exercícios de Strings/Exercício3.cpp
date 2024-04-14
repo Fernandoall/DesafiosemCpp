@@ -44,13 +44,23 @@ int main() {
         return 1;
     }
 
-    // Processar cada nome no arquivo de entrada
+    // Processando cada nome no arquivo de entrada
     string nome;
     while (getline(arquivoEntrada, nome)) {
-        // Transformar o nome para o formato de agenda telefônica
+        // Transformando o nome para o formato de agenda telefônica
         string nomeFormatado = transformarNome(nome);
 
-        // Escrever o nome no arquivo de saída
+        // Escrevendo o nome no arquivo de saída
         arquivoSaida << nomeFormatado << endl;
-    }
+    }   
+
+    // Fechar os arquivos
+    arquivoEntrada.close();
+    arquivoSaida.close();
+
+    cout << "Nomes transformados com sucesso!" << endl;
+
+    return 0;
+
+}
 
