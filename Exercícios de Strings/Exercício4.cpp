@@ -13,4 +13,9 @@ std::string nomeParaCitacao(const std::string& nome) {
     while (std::getline(iss, token, ' ')) {
         partes.push_back(token);
     }
+
+    
+    std::string citacao;
+    citacao += partes.back(); // Sobrenome
+    citacao += ", ";
     
