@@ -14,8 +14,19 @@ std::string nomeParaCitacao(const std::string& nome) {
         partes.push_back(token);
     }
 
-    
     std::string citacao;
     citacao += partes.back(); // Sobrenome
     citacao += ", ";
+
+    for (size_t i= 0; i < partes.size() - 1; ++i){
+      if (i != 0) {
+        citacao += "";
+      }
+      if (partes[i].size() > 0) {
+        citacao += std::toupper(partes[i][0]);
+        citacao += ".";
+      }
+    }
+
+    
     
