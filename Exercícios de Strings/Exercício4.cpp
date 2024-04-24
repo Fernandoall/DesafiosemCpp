@@ -28,5 +28,31 @@ std::string nomeParaCitacao(const std::string& nome) {
       }
     }
 
+    return citacao;
+}
+
+int main (){
+  std::ifstream arquivo("nomes.txt");
+  if(!arquivo) {
+    std::cerr << "Erro ao abrir o arquivo." << std::endl;
+    return 1;
+  }
+
+  std::ofstream arquivo_Saida("nomes_citacao.txt");
+  if(!arquivo_saida) {
+    std::cerr << "Erro ao criar o arquivo de saida." <<std::endl;
+    return 1;
+  }
+
+  std::string linha;
+  while (std::getline(arquivo, linha)) {
+    std:string citacao + nomeParaCitacao(linha);
+    arquivo_saida << citacao << std::endl;
+    std::cout << citacao << std::endl; 
+  }
+}
+
+    
+
     
     
