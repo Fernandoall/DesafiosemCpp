@@ -1,0 +1,16 @@
+3 - Passagem de vetor de vetores para funções: Você está passando um vetor de vetores maos para as 
+funções distribuirCartas() e imprimirMaos(). Certifique-se de que o tamanho correto está sendo 
+usado e gerenciado corretamente.
+
+4 - Organização do código: O código parece bem organizado e estruturado. 
+No entanto, para um código mais legível e fácil de manter, você pode 
+considerar adicionar comentários explicativos para cada função e trecho de código importante.
+
+5 - Tratamento de casos especiais: Seu código presume que sempre haverá 4  
+jogadores e que cada jogador receberá 11 cartas. Certifique-se de que 
+isso é intencional e que seu código possa lidar com diferentes cenários, 
+se necessário.
+
+6 - Impressão das cartas: As cartas estão sendo impressas como números de naipe, 
+números de cartas e números de baralho. Você pode considerar mapear esses valores 
+para representações mais legíveis, como "Ás", "Rei", "Copas", "Paus", etc.
