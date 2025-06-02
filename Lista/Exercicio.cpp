@@ -1,4 +1,30 @@
-#include <iostream>
+#include <fstream>
+
+std::ofstream logFile("funcionarios.log");
+
+void incluirFuncionario(std::vector<Funcionario>& funcionarios) {
+    Funcionario novoFuncionario;
+    std::cout << "Digite o prontuario: ";
+    std::cin >> novoFuncionario.prontuario;
+    std::cout << "Digite o nome: ";
+    std::cin.ignore(); // Limpar o buffer do teclado
+    std::getline(std::cin, novoFuncionario.nome);
+    std::cout << "Digite o salario: ";
+    std::cin >> novoFuncionario.salario;
+
+    // Verificar se já existe um funcionário com o mesmo prontuário
+    for (const auto& funcionario : funcionarios) {
+        if (funcionario.prontuario == novoFuncionario.prontuario) {
+            std::cout << "Já existe um funcionário com o mesmo prontuário." << std::endl;
+            logFile << "Erro: Funcionário com prontuário " << novoFuncionario.prontuario << " já existe." << std::endl;
+            return;
+        }
+    }
+
+    funcionarios.push_back(novoFuncionario);
+    std::cout << "Funcionário incluído com sucesso." << std::endl;
+    logFile << "Funcionário incluído: Prontuário " << novoFuncionario.prontuario << ", Nome " << novoFuncionario.nome << ", Salário " << novoFuncionario.salario << std::endl;
+}#include <iostream>
 #include <vector>
 #include <algorithm>
 
